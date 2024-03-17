@@ -132,3 +132,14 @@ footer {
 .contact-items li {
     margin: 0 10px;
 }
+
+/* For mobile devices */
+@media screen and (max-width: 600px) {
+    h1 {
+        display: none;
+    }
+
+    nav {
+        justify-content: space-around;
+    }
+}

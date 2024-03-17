@@ -34,6 +34,45 @@ header p {
     font-size: 1rem;
 }
 
+/* styles.css */
+
+/* Reset default margin and padding for the navigation */
+nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Style the navigation menu */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style the navigation links */
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px; /* Padding for the links */
+    color: #fff; /* Text color */
+    text-decoration: none;
+}
+
+/* Change link color on hover */
+nav ul li a:hover {
+    background-color: #555; /* Hover background color */
+}
+
+
 /* Main content styles */
 main {
     padding: 20px;

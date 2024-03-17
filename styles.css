@@ -1,8 +1,10 @@
-/* CSS styles go here */
+/* styles.css */
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f5f5f5;
 }
 
 header {
@@ -12,10 +14,25 @@ header {
     text-align: center;
 }
 
-section {
+main {
     padding: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
+}
+
+section {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    font-family: 'Bungee', cursive;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
 footer {

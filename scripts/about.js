@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(aboutContent => {
             aboutContentContainer.innerHTML = ''; // Clear the loader
             aboutContentContainer.classList.remove('loading');
-            aboutContentContainer.innerHTML = `<h2>About Me<h2>`;
             aboutContent.mainContent.forEach(content => {
                 const contentDiv = document.createElement('article');
                 contentDiv.classList.add('card');

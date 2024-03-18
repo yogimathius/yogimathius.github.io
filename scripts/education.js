@@ -3,6 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch('./data/education.json')
         .then(response => response.json())
         .then(educationContent => {
+            educationContentContainer.innerHTML = ''; // Clear the loader
+            educationContentContainer.classList.remove('loading');
+            educationContentContainer.innerHTML = `<h2>Education<h2>`;
+
             educationContent.education.forEach(content => {
                 const article = document.createElement('article');
                 const h3 = document.createElement('h3');

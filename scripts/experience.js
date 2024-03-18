@@ -3,6 +3,10 @@ window.addEventListener('DOMContentLoaded', () => {
     fetch('./data/experience.json')
         .then(response => response.json())
         .then(employmentData => {
+            employmentContentContainer.innerHTML = ''; // Clear the loader
+            employmentContentContainer.classList.remove('loading');
+            employmentContentContainer.innerHTML = `<h2>Employment<h2>`;
+
             employmentData.employment.forEach(job => {
                 const article = document.createElement('article');
                 const h3 = document.createElement('h3');

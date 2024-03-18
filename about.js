@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const aboutContentContainer = document.querySelector('#about-me');
-    fetch('./about.json')
+    fetch('./data/about.json')
         .then(response => response.json())
         .then(aboutContent => {
             aboutContent.mainContent.forEach(content => {

@@ -1,0 +1,45 @@
+{
+    "employment": [
+      {
+        "company": "Shopify",
+        "position": "Software Developer",
+        "duration": "June 2022​ to Present",
+        "responsibilities": [
+          "Design, develop, and maintain solutions for Shopify merchants.",
+          "Collaborate effectively with cross-functional teams to grasp merchant requirements.",
+          "Thoroughly test and validate all code changes prior to production."
+        ]
+      },
+      {
+        "company": "Lighthouse Labs",
+        "position": "Instructor/Mentor/Project Evaluator",
+        "duration": "Nov. 2020​ to Current",
+        "responsibilities": [
+          "Tailor student guidance by providing personalized assistance to enhance technical skills and overcome challenges.",
+          "Build and maintain positive relationships with students, fostering a supportive and inclusive learning environment.",
+          "Assess student projects regularly, evaluating technical accuracy, coding style, and adherence to project requirements."
+        ]
+      },
+      {
+        "company": "Springboard Bootcamp",
+        "position": "Mentor",
+        "duration": "July 2023​ to Current",
+        "responsibilities": [
+          "Provide personalized guidance and mentorship to a diverse group of students.",
+          "Assist students in setting clear learning goals and creating customized study plans, resulting in a significant improvement in their overall course performance.",
+          "Conduct weekly one-on-one meetings with students to address their questions, concerns, and challenges."
+        ]
+      },
+      {
+        "company": "TWG, a Deloitte Business",
+        "position": "Junior Software Engineer",
+        "duration": "May 2021​ to June 2022​",
+        "responsibilities": [
+          "Developed TypeScript React components utilizing GraphQL API to create a responsive user interface.",
+          "Collaborated with cross-functional teams to design and implement GraphQL APIs within a monolithic Ruby on Rails application.",
+          "Successfully refactored legacy code to enhance performance, scalability, and maintainability of GraphQL APIs and React components."
+        ]
+      }
+    ]
+  }
+  

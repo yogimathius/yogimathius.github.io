@@ -182,6 +182,10 @@ footer p {
     }
 }
 
+nav .logo {
+    height: 60px;
+    width: 60px;
+}
 
 /* For mobile devices */
 @media screen and (max-width: 600px) {

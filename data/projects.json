@@ -1,41 +1,40 @@
 {
-    "projects": [
-      {
-        "title": "Shopify Discount Functions Testing App",
-        "duration": "July 2023 to Present",
-        "details": [
-          "Internal tool developed to assist colleagues in testing and tophatting Shopify Discount Function logic.",
-          "Deployed to prod for internal use with reliable CI/CD pipeline using Google Cloud Platform and Github Actions."
-        ]
-      },
-      {
-        "title": "Shopify Flow App A/B Test",
-        "duration": "June 2022 to Current",
-        "details": [
-          "Led the development of an A/B test for Shopify Flow's template UI experience with the goal of increasing conversion rate.",
-          "Implemented tracking and analysis tools to measure the success of the A/B test."
-        ]
-      },
-      {
-        "title": "Shopify Admin Shopify Shipping Sell Page",
-        "duration": "Aug. 2021 to June 2022",
-        "details": [
-          "Top contributor in a fast-paced environment, collaborating effectively with Marketing UX team to deliver successful outcomes.",
-          "Implement various cases of logic that depends on GraphQL API in React TypeScript Framework.",
-          "Constant research into API documentation involved, to better grasp the vastness of multiple integrations.",
-          "Received positive feedback from multiple Senior Shopifolk Developers for personal contributions."
-        ]
-      },
-      {
-        "title": "FreeFlow Social Network",
-        "duration": "Sept. 2020 to Current",
-        "details": [
-          "Developed a game-based social network connecting users based on their unique needs, assets, and skills.",
-          "Executed a comprehensive front-end project migration and rebuild from Gatsby UI to React with Redux Toolkit.",
-          "Developed multiple Redux Toolkit state management modules, showcasing proficiency with entityAdapter and async 'thunks'.",
-          "Acquired and applied knowledge of Redux Toolkit through self-taught study and prior understanding of reducer concepts."
-        ]
-      }
-    ]
-  }
-  
+  "projects": [
+    {
+      "title": "Shopify Discount Functions Testing App",
+      "duration": "July 2023 to Present",
+      "details": [
+        "Developed an internal testing platform to streamline validation of Shopify Discount Function logic, enhancing team efficiency",
+        "Implemented robust CI/CD pipeline using Google Cloud Platform and Github Actions for reliable production deployment"
+      ]
+    },
+    {
+      "title": "Shopify Flow App A/B Test",
+      "duration": "June 2022 to Present",
+      "details": [
+        "Spearheaded the development of an A/B testing initiative for Shopify Flow's template UI, focusing on conversion optimization",
+        "Designed and implemented comprehensive analytics tools to measure and evaluate test performance metrics"
+      ]
+    },
+    {
+      "title": "Shopify Admin Shipping Integration",
+      "duration": "Aug. 2021 to June 2022",
+      "details": [
+        "Led development initiatives in a fast-paced environment, collaborating closely with Marketing UX team to drive successful outcomes",
+        "Architected and implemented complex GraphQL-dependent logic using React TypeScript, ensuring robust functionality",
+        "Conducted thorough API integration research to optimize multiple service connections",
+        "Received commendation from senior developers for high-quality contributions and technical expertise"
+      ]
+    },
+    {
+      "title": "FreeFlow Social Network",
+      "duration": "Sept. 2020 to Present",
+      "details": [
+        "Architected and developed an innovative game-based social platform facilitating user connections through skill and resource matching",
+        "Successfully executed frontend migration from Gatsby to React with Redux Toolkit, improving application performance",
+        "Implemented sophisticated state management using Redux Toolkit's entityAdapter and async thunks",
+        "Demonstrated strong self-directed learning capabilities in mastering Redux Toolkit ecosystem"
+      ]
+    }
+  ]
+}

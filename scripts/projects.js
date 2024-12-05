@@ -1,40 +1,55 @@
-window.addEventListener('DOMContentLoaded', () => {
-    const projectsContentContainer = document.querySelector('#projects-section');
+window.addEventListener("DOMContentLoaded", () => {
+  const projectsContentContainer = document.querySelector("#projects-section");
 
-    fetch('./data/projects.json')
-        .then(response => response.json())
-        .then(projectsData => {
-            // Hide loading spinner
-            projectsContentContainer.innerHTML = ''; // Clear the loader
-            projectsContentContainer.classList.remove('loading');
-            projectsContentContainer.innerHTML = `<h2>Projects<h2>`;
+  fetch("./data/projects.json")
+    .then((response) => response.json())
+    .then((projectsData) => {
+      projectsContentContainer.innerHTML = ""; // Clear the loader
+      projectsContentContainer.classList.remove("loading");
 
-            // Iterate over each project and create HTML elements
-            projectsData.projects.forEach(project => {
-                const projectArticle = document.createElement('article');
-                const projectTitle = document.createElement('h3');
-                const projectDuration = document.createElement('p');
-                const projectDetailsList = document.createElement('ul');
+      // Create and add section title
+      const sectionTitle = document.createElement("h2");
+      sectionTitle.textContent = "Projects";
+      sectionTitle.classList.add("section-title");
+      projectsContentContainer.appendChild(sectionTitle);
 
-                projectTitle.textContent = project.title;
-                projectDuration.innerHTML = `<strong>${project.duration}</strong>`;
-                project.details.forEach(detail => {
-                    const detailListItem = document.createElement('li');
-                    detailListItem.textContent = detail;
-                    projectDetailsList.appendChild(detailListItem);
-                });
+      // Iterate over each project
+      projectsData.projects.forEach((project) => {
+        const projectArticle = document.createElement("article");
+        projectArticle.classList.add("content-card");
 
-                projectArticle.appendChild(projectTitle);
-                projectArticle.appendChild(projectDuration);
-                projectArticle.appendChild(projectDetailsList);
+        const projectTitle = document.createElement("h3");
+        projectTitle.classList.add("card-title");
+        projectTitle.textContent = project.title;
 
-                projectsContentContainer.appendChild(projectArticle);
-            });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Hide loading spinner and show error message
-            loadingSpinner.style.display = 'none';
-            projectsContentContainer.innerHTML = '<p>Error loading projects. Please try again later.</p>';
+        const projectDuration = document.createElement("p");
+        projectDuration.classList.add("card-subtitle");
+        projectDuration.innerHTML = `<strong>${project.duration}</strong>`;
+
+        const projectDetailsList = document.createElement("ul");
+        projectDetailsList.classList.add("detail-list");
+
+        project.details.forEach((detail) => {
+          const detailListItem = document.createElement("li");
+          detailListItem.classList.add("detail-item");
+          detailListItem.textContent = detail;
+          projectDetailsList.appendChild(detailListItem);
         });
+
+        projectArticle.appendChild(projectTitle);
+        projectArticle.appendChild(projectDuration);
+        projectArticle.appendChild(projectDetailsList);
+
+        projectsContentContainer.appendChild(projectArticle);
+      });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      projectsContentContainer.innerHTML = `
+                <div class="error-message">
+                    <h2>Oops! Something went wrong.</h2>
+                    <p>Unable to load project content. Please try again later.</p>
+                </div>
+            `;
+    });
 });

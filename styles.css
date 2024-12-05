@@ -414,3 +414,43 @@ h3 {
     font-size: 1.1rem;
   }
 }
+
+/* Skills Section Styling */
+.skills-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.skill-category {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.skill-category:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-category h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.skill-category p {
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Keep loader only for employment section */
+#employment-section .loader {
+  margin: 2rem auto;
+}
+
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

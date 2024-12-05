@@ -1,33 +1,32 @@
 {
-    "mainContent": [
-      {
-          "title": "Hey there!" ,
-          "body": "Welcome to my corner of the web! 🌟 I'm Mathius Johnson, a passionate developer with a penchant for adventure and a knack for finding the perfect balance between code and chaos."
-      },
-      {
-          "title": "A Proud Papa with a Full House" ,
-          "body": "First and foremost, I'm a proud father of three (soon to be four!) young adventurers who keep me on my toes and remind me daily of the joy found in the simple things – like discovering hidden treasure in the backyard or building a fortress out of couch cushions."
-      },
-      {
-          "title": "From Code to Consoles: Gaming Enthusiast" ,
-          "body": "When I'm not immersed in the world of code, you'll often find me embarking on epic adventures in the digital realm. Whether it's slaying dragons in fantasy worlds, planning strategic assaults on castles and fortresses, or embarking on quests to level up and unlock new abilities, gaming is not just a hobby – it's a thrilling journey into realms of imagination and challenge."
-      },
-      {
-          "title": "Rocking Out to the Rhythm of Life" ,
-          "body": "Life's journey is like a melody, and music is my ever-present companion. Whether I'm deeply engrossed in coding or venturing through the wilderness, there's always a harmonious melody in the backdrop, resonating with the rhythm of my soul. With every keystroke and every step, music fuels my passion, infusing each moment with its unique cadence and energy. After all, what's life without a vibrant soundtrack to accompany its highs and lows?"
-      },
-      {
-          "title": "Harmonizing Life's Symphony: Crafting Verses and Tales" ,
-          "body": "And when the urge strikes, I don the hat of a wordsmith, crafting intricate verses and lyrical flows that echo the beats of my heart. Hip hop isn't just a genre—it's a canvas where I paint stories, dreams, and emotions, channeling my creativity into verses that resonate with listeners near and far. Through the art of rhyme and rhythm, I bridge worlds, weaving narratives that captivate minds and move hearts, one verse at a time."
-      },
-      {
-          "title": "Philosophizing Under the Stars" ,
-          "body": "Philosophy isn't just a subject – it's a way of life. I love diving into deep conversations about the meaning of existence, the nature of reality, and the pursuit of happiness. Because sometimes, the biggest questions have the simplest answers."
-      },
-      {
-          "title": "Finding Zen in the Chaos: The Yogi Developer" ,
-          "body": "Last but certainly not least, I'm a firm believer in the power of yoga to find peace in a chaotic world. Whether I'm striking a pose on the mat or finding my center amidst the chaos of debugging, yoga keeps me grounded and ready to tackle whatever challenges come my way."
-      }
-    ]
-  }
-  
+  "mainContent": [
+    {
+      "title": "Introduction",
+      "body": "Welcome! I'm Mathius Johnson, a software developer who believes in the intersection of technical excellence and creative problem-solving. I approach development with both precision and imagination, always seeking to bridge the gap between complex challenges and elegant solutions."
+    },
+    {
+      "title": "Life Beyond Code",
+      "body": "When I'm not crafting code, I'm a father of three (soon to be four) who finds that parenting has enhanced my perspective on problem-solving and adaptability. The daily adventures of family life continually remind me that the best solutions often emerge from embracing both structure and spontaneity."
+    },
+    {
+      "title": "Gaming & Strategic Thinking",
+      "body": "My interest in gaming extends beyond entertainment—it's a realm where strategy, problem-solving, and creativity converge. This passion parallels my approach to software development, where each challenge requires a similar blend of tactical thinking and innovative solutions."
+    },
+    {
+      "title": "The Role of Music",
+      "body": "Music is an integral part of my creative process. Whether I'm deep in development work or brainstorming solutions, I find that the right soundtrack enhances focus and creativity. This appreciation for rhythm and pattern often influences how I approach code architecture and problem-solving."
+    },
+    {
+      "title": "Creative Expression",
+      "body": "Beyond development, I channel my creativity through writing and music composition, particularly in hip hop. This outlet provides valuable perspective on communication and structure—skills that translate meaningfully into technical documentation and code organization."
+    },
+    {
+      "title": "Philosophical Approach",
+      "body": "I maintain a philosophical approach to both life and coding, believing that the best solutions emerge from understanding the deeper patterns and principles at play. This mindset helps me tackle complex technical challenges while keeping sight of the broader context."
+    },
+    {
+      "title": "Balance & Focus",
+      "body": "Through practicing yoga, I've learned the importance of balance and mindfulness—principles that prove invaluable in software development. This practice enhances my ability to maintain focus during complex problem-solving while remaining adaptable to changing requirements."
+    }
+  ]
+}

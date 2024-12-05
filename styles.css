@@ -127,6 +127,9 @@ main {
 .content-section {
   animation: fadeIn 0.8s ease-out forwards;
   margin-bottom: 4rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 @keyframes fadeIn {
@@ -276,7 +279,7 @@ h3 {
 }
 
 /* Project Page Specific Styles */
-.project-card {
+.content-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   padding: 2rem;
@@ -284,62 +287,63 @@ h3 {
   transition: var(--transition);
 }
 
-.project-card:hover {
+.content-card:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.1);
 }
 
-.project-title {
+.card-title {
   color: var(--accent-color);
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.project-date {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.project-description {
+.card-subtitle {
+  color: var(--text-color);
+  font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  line-height: 1.6;
+  opacity: 0.9;
 }
 
-.project-details {
+.detail-list {
   list-style: none;
-  padding-left: 0;
-}
-
-.project-details li {
-  margin-bottom: 0.5rem;
   padding-left: 1.5rem;
-  position: relative;
 }
 
-.project-details li::before {
+.detail-item {
+  position: relative;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.detail-item::before {
   content: "▹";
   position: absolute;
-  left: 0;
+  left: -1.5rem;
   color: var(--accent-color);
 }
 
-/* Loading state */
-.content-section.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 300px;
+/* Section Titles */
+.section-title {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin: 0 0 2rem 0;
+  font-weight: 600;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .project-card {
+  .content-card {
     padding: 1.5rem;
   }
 
-  .project-title {
+  .card-title {
     font-size: 1.3rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
   }
 }
 
@@ -452,5 +456,204 @@ h3 {
 @media (min-width: 768px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Content Section Spacing */
+.content-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Title and Content Spacing */
+h2 {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin: 4rem 0 1.5rem 0;
+  font-weight: 600;
+}
+
+/* First title should have less top margin */
+.content-section:first-child h2 {
+  margin-top: 0;
+}
+
+/* Paragraph Spacing */
+p {
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+/* Last paragraph in each section shouldn't have bottom margin */
+.content-section:last-child p {
+  margin-bottom: 0;
+}
+
+/* Section Spacing */
+.content-section + .content-section {
+  margin-top: 4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.75rem;
+    margin: 3rem 0 1.25rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .content-section + .content-section {
+    margin-top: 3rem;
+  }
+}
+
+/* About Page Specific Styles */
+#about-me {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-section {
+  margin-bottom: 4rem;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin: 4rem 0 1.5rem 0;
+  font-weight: 600;
+}
+
+.content-section:first-child .section-title {
+  margin-top: 0;
+}
+
+.section-text {
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+/* Error Message Styling */
+.error-message {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-message h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* Loading State */
+#about-me.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.75rem;
+    margin: 3rem 0 1.25rem 0;
+  }
+
+  .section-text {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Common Card Styles */
+.content-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-subtitle {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.detail-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.detail-item {
+  position: relative;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.detail-item::before {
+  content: "▹";
+  position: absolute;
+  left: -1.5rem;
+  color: var(--accent-color);
+}
+
+/* Section Titles */
+.section-title {
+  color: var(--accent-color);
+  font-size: 2rem;
+  margin: 0 0 2rem 0;
+  font-weight: 600;
+}
+
+/* Error Message */
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
   }
 }

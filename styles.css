@@ -126,10 +126,10 @@ main {
 
 .content-section {
   animation: fadeIn 0.8s ease-out forwards;
-  margin-bottom: 4rem;
-  max-width: var(--max-width);
+  margin-bottom: 2rem;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 
 @keyframes fadeIn {
@@ -241,10 +241,9 @@ h3 {
 }
 
 #summary-section p {
-  line-height: 1.6;
   font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-color);
 }
 
 /* Loader styling */
@@ -461,9 +460,9 @@ h3 {
 
 /* Content Section Spacing */
 .content-section {
-  max-width: var(--max-width);
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 
 /* Title and Content Spacing */
@@ -484,18 +483,13 @@ p {
   color: var(--text-color);
   line-height: 1.8;
   font-size: 1.1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   max-width: 800px;
 }
 
 /* Last paragraph in each section shouldn't have bottom margin */
 .content-section:last-child p {
   margin-bottom: 0;
-}
-
-/* Section Spacing */
-.content-section + .content-section {
-  margin-top: 4rem;
 }
 
 /* Responsive adjustments */
@@ -507,11 +501,7 @@ p {
 
   p {
     font-size: 1rem;
-    margin-bottom: 3rem;
-  }
-
-  .content-section + .content-section {
-    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -521,11 +511,6 @@ p {
   margin: 0 auto;
   padding: 0 2rem;
 }
-
-.content-section {
-  margin-bottom: 4rem;
-}
-
 .content-section:last-child {
   margin-bottom: 0;
 }
@@ -656,4 +641,15 @@ p {
   .card-subtitle {
     font-size: 1rem;
   }
+}
+
+/* Specific Styles for Summary */
+#summary-section {
+  text-align: center;
+}
+
+#summary-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
 }

@@ -1,60 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathius Johnson's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap" rel="stylesheet">
-    <script defer src="scripts/index.js"></script>
-    <script defer src="scripts/experience.js"></script>
-    <script src="https://kit.fontawesome.com/e443c157b0.js" crossorigin="anonymous"></script>
-</head>
-<body class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience - Mathius Johnson</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e443c157b0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="background-gradient"></div>
     <header>
-        <nav>
-            <a href="/" class="logo">
-                <img src="images/logo.png" alt="Mathius Johnson's Portfolio" class="logo">
-            </a>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="education.html">Education</a></li>
-            </ul>
-        </nav>
+      <nav class="modern-nav">
+        <a href="/" class="logo">
+          <img src="images/logo.png" alt="Mathius Johnson's Portfolio" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="education.html" class="nav-link">Education</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section id="summary-section">
-            <h2>Summary</h2>
-            <p>
-                As an intermediate developer with experience in multiple programming languages and frameworks, including Javascript, Ruby, and Python, I bring a versatile skill set and the ability to adapt to different technologies and projects. Through my collaborative approach, I work effectively with team members to achieve project goals and deliver high-quality code. I pride myself on my persistence and dependability, ensuring that projects are completed on time and to a high standard. My positive attitude and drive to succeed enable me to take on challenges and help drive team success.
-            </p>
-        </section>
-        <section id="employment-section"  class="loading">
-            <div class="loader"></div>
-        </section>
-        
-        <section id="skills-section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Languages: JavaScript, TypeScript, Ruby, Python, HTML, CSS, C, Rust</li>
-                <li>Frameworks & Libraries: NodeJS, ReactJS, Ruby on Rails, GraphQL, Express, Django, Flask, Apollo, NestJS, Angular, Redux Toolkit, TailwindCSS</li>
-                <li>Testing: Jest, RSpec, TDD, Cypress, Mocha & Chai, BDD</li>
-                <li>Systems & Databases: Postgres, SQL, MongoDB, Mongoose, Sequelize, Heroku, Netlify, CircleCI</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <ul class="contact-items">
-            <li> <a href="mailto:info@yogimathius.dev" target="_blank"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="https://github.com/yogimathius" target="_blank"><i class="fab fa-github"></i> </a></li>
-            <li><a href="https://www.linkedin.com/in/mathius-johnson" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
-            <!-- Add links to your other social media profiles here -->
+      <section id="summary-section" class="content-section">
+        <h2>Summary</h2>
+        <p>
+          As an intermediate developer with experience in multiple programming
+          languages and frameworks, including Javascript, Ruby, and Python, I
+          bring a versatile skill set and the ability to adapt to different
+          technologies and projects. Through my collaborative approach, I work
+          effectively with team members to achieve project goals and deliver
+          high-quality code. I pride myself on my persistence and dependability,
+          ensuring that projects are completed on time and to a high standard.
+          My positive attitude and drive to succeed enable me to take on
+          challenges and help drive team success.
+        </p>
+      </section>
+
+      <section id="employment-section" class="content-section">
+        <div class="loader"></div>
+      </section>
+
+      <section id="skills-section" class="content-section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>
+            <strong>Languages:</strong> JavaScript, TypeScript, Ruby, Python,
+            HTML, CSS, C, Rust
+          </li>
+          <li>
+            <strong>Frameworks & Libraries:</strong> NodeJS, ReactJS, Ruby on
+            Rails, GraphQL, Express, Django, Flask, Apollo, NestJS, Angular,
+            Redux Toolkit, TailwindCSS
+          </li>
+          <li>
+            <strong>Testing:</strong> Jest, RSpec, TDD, Cypress, Mocha & Chai,
+            BDD
+          </li>
+          <li>
+            <strong>Systems & Databases:</strong> Postgres, SQL, MongoDB,
+            Mongoose, Sequelize, Heroku, Netlify, CircleCI
+          </li>
         </ul>
-        <p>&copy; 2024 Mathius Johnson</p>
+      </section>
+    </main>
+    <footer class="modern-footer">
+      <ul class="social-links">
+        <li>
+          <a
+            href="mailto:info@yogimathius.dev"
+            target="_blank"
+            class="social-icon"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/yogimathius"
+            target="_blank"
+            class="social-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/mathius-johnson"
+            target="_blank"
+            class="social-icon"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+      <p class="copyright">&copy; 2024 Mathius Johnson</p>
     </footer>
-</body>
+  </body>
 </html>

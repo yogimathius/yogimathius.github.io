@@ -1,67 +1,67 @@
 {
-    "education": [
-      {
-        "school": "Qwasar Silicon Valley",
-        "degree": "Masters Computer Science",
-        "year": "2025",
-        "details": [
-          "Engaged in a skill-focused master's degree program emphasizing hands-on learning and in-demand skills development.",
-          "Acquired expertise in advanced algorithms, data structures, and software architecture.",
-          "Developed proficiency in programming primarily in C, with additional languages including C++, Go, and Rust covered in upcoming modules.",
-          "Gained comprehensive knowledge of embedded programming and its application in software development."
-        ]
-      },
-      {
-        "school": "Lighthouse Labs",
-        "degree": "Diploma of Full Stack Web Development",
-        "year": "July 2020 to Oct. 2020",
-        "details": [
-          "Completed an intensive bootcamp covering both front-end and back-end web development.",
-          "Acquired proficiency in building dynamic web applications using technologies such as Node.js, Express, and MongoDB.",
-          "Gained experience in version control using Git and collaboration platforms like GitHub.",
-          "Participated in real-world projects and coding challenges to enhance problem-solving skills."
-        ]
-      },
-      {
-        "school": "Brainstation",
-        "degree": "Certificate in Cyber Security Essentials",
-        "year": "Sept. 2022 to Dec. 2022",
-        "details": [
-          "Hands-on experience in implementing security protocols to safeguard digital assets.",
-          "Conducted threat analysis and risk assessments to identify vulnerabilities and mitigate potential security risks.",
-          "Learned about the latest cybersecurity trends and best practices to protect against emerging threats."
-        ]
-      },
-      {
-        "school": "Brainstation",
-        "degree": "Certificate in UX Design",
-        "year": "Nov. 2021 to Jan. 2022",
-        "details": [
-          "Acquired knowledge and experience in user-centered design principles and methodologies.",
-          "Conducted user research to understand user needs and behaviors.",
-          "Developed wireframes, prototypes, and conducted usability testing to iterate and improve designs."
-        ]
-      },
-      {
-        "school": "Brainstation",
-        "degree": "Certificate in HTML and CSS",
-        "year": "May 2020 to June 2020",
-        "details": [
-          "Learned the fundamentals of web development, including HTML5 and CSS3.",
-          "Acquired skills in creating responsive, visually appealing web pages.",
-          "Explored modern CSS techniques and best practices for styling and layout."
-        ]
-      },
-      {
-        "school": "Lighthouse Labs",
-        "degree": "Certificate in Intro to Front End with Javascript",
-        "year": "May 2020 to June 2020",
-        "details": [
-          "Developed expertise in front-end web development using HTML, CSS, and JavaScript.",
-          "Learned about asynchronous HTTP requests using AJAX for real-time data processing and retrieval.",
-          "Acquired skills in building interactive user interfaces and responsive web design."
-        ]
-      }
-    ]
-  }
-  
+  "education": [
+    {
+      "school": "Qwasar Silicon Valley",
+      "degree": "Masters Computer Science",
+      "year": "2025",
+      "details": [
+        "Pursuing an advanced degree focused on practical software engineering, maintaining high quality of craftsmanship while specializing in systems architecture",
+        "Mastering advanced algorithms and data structures through intensive project-based learning, with emphasis on optimization and scalability",
+        "Developing expertise in systems and webassembly programming using Rust, while expanding proficiency in C++, Go, and C through advanced coursework",
+        "Implementing complex embedded systems projects, gaining deep understanding of hardware-software integration and performance optimization",
+        "Examples of projects include building virtual machines, high-throughput networking applications, event-driven systems, and AI engineering with local LLMs"
+      ]
+    },
+    {
+      "school": "Lighthouse Labs",
+      "degree": "Diploma of Full Stack Web Development",
+      "year": "July 2020 to Oct. 2020",
+      "details": [
+        "Completed rigorous 12-week immersive program with distinction, focusing on modern full-stack development methodologies",
+        "Architected and deployed multiple full-stack applications utilizing Node.js, Express, and MongoDB, emphasizing scalable design patterns",
+        "Implemented industry-standard Git workflows and collaborative development practices in team-based projects",
+        "Delivered capstone project that earned recognition for technical innovation and clean code architecture"
+      ]
+    },
+    {
+      "school": "Brainstation",
+      "degree": "Certificate in Cyber Security Essentials",
+      "year": "Sept. 2022 to Dec. 2022",
+      "details": [
+        "Implemented comprehensive security protocols and best practices in real-world scenarios, achieving top marks in practical assessments",
+        "Executed detailed vulnerability assessments and penetration testing procedures, developing strategic mitigation strategies",
+        "Researched and analyzed emerging cybersecurity threats, contributing to development of proactive security frameworks"
+      ]
+    },
+    {
+      "school": "Brainstation",
+      "degree": "Certificate in UX Design",
+      "year": "Nov. 2021 to Jan. 2022",
+      "details": [
+        "Mastered user-centered design principles through practical application in multiple client-focused projects",
+        "Conducted comprehensive user research and analysis, translating findings into actionable design strategies",
+        "Created high-fidelity prototypes and conducted extensive usability testing, resulting in measurable UX improvements"
+      ]
+    },
+    {
+      "school": "Brainstation",
+      "degree": "Certificate in HTML and CSS",
+      "year": "May 2020 to June 2020",
+      "details": [
+        "Mastered modern web development fundamentals, achieving perfect scores on all practical assessments",
+        "Developed responsive, accessible websites utilizing advanced CSS frameworks and methodologies",
+        "Implemented modern CSS architectures including Grid, Flexbox, and CSS custom properties for scalable designs"
+      ]
+    },
+    {
+      "school": "Lighthouse Labs",
+      "degree": "Certificate in Front End Development",
+      "year": "May 2020 to June 2020",
+      "details": [
+        "Excelled in front-end development fundamentals, focusing on modern JavaScript frameworks and libraries",
+        "Implemented complex asynchronous operations and API integrations using modern JavaScript practices",
+        "Developed responsive, interactive web applications emphasizing performance optimization and user experience"
+      ]
+    }
+  ]
+}

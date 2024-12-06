@@ -18,6 +18,21 @@ async function fetchGitHubStats() {
     const systemsKB = (languageStats.systems.total / 1024).toFixed(1);
     const backendKB = (languageStats.backend.total / 1024).toFixed(1);
 
+    const frontendFrameworks = frameworkStats.frameworks.frontend.map((fw) => ({
+      ...fw,
+      size: ((frameworkStats.total * fw.percentage) / 100 / 1024).toFixed(1),
+    }));
+
+    const mobileFrameworks = frameworkStats.frameworks.mobile.map((fw) => ({
+      ...fw,
+      size: ((frameworkStats.total * fw.percentage) / 100 / 1024).toFixed(1),
+    }));
+
+    const backendFrameworks = frameworkStats.frameworks.backend.map((fw) => ({
+      ...fw,
+      size: ((frameworkStats.total * fw.percentage) / 100 / 1024).toFixed(1),
+    }));
+
     const systemsLanguages = languageStats.systems.languages.map((lang) => ({
       ...lang,
       size: (
@@ -43,7 +58,7 @@ async function fetchGitHubStats() {
           <div class="stat-items">
             <div class="framework-group">
               <h4>Frontend Frameworks</h4>
-              ${frameworkStats.frameworks.frontend
+              ${frontendFrameworks
                 .map(
                   (fw) => `
                   <div class="stat-item">
@@ -53,7 +68,9 @@ async function fetchGitHubStats() {
                         fw.percentage
                       }%"></div>
                     </div>
-                    <span class="stat-value">${fw.percentage.toFixed(1)}%</span>
+                    <span class="stat-value">${
+                      fw.size
+                    } KB (${fw.percentage.toFixed(1)}%)</span>
                   </div>
                 `
                 )
@@ -62,7 +79,7 @@ async function fetchGitHubStats() {
 
             <div class="framework-group">
               <h4>Mobile Development</h4>
-              ${frameworkStats.frameworks.mobile
+              ${mobileFrameworks
                 .map(
                   (fw) => `
                   <div class="stat-item">
@@ -72,7 +89,9 @@ async function fetchGitHubStats() {
                         fw.percentage
                       }%"></div>
                     </div>
-                    <span class="stat-value">${fw.percentage.toFixed(1)}%</span>
+                    <span class="stat-value">${
+                      fw.size
+                    } KB (${fw.percentage.toFixed(1)}%)</span>
                   </div>
                 `
                 )
@@ -81,7 +100,7 @@ async function fetchGitHubStats() {
 
             <div class="framework-group">
               <h4>Backend Frameworks</h4>
-              ${frameworkStats.frameworks.backend
+              ${backendFrameworks
                 .map(
                   (fw) => `
                   <div class="stat-item">
@@ -91,7 +110,9 @@ async function fetchGitHubStats() {
                         fw.percentage
                       }%"></div>
                     </div>
-                    <span class="stat-value">${fw.percentage.toFixed(1)}%</span>
+                    <span class="stat-value">${
+                      fw.size
+                    } KB (${fw.percentage.toFixed(1)}%)</span>
                   </div>
                 `
                 )

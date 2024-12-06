@@ -676,34 +676,35 @@ p {
 
 .stats-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 1rem;
 }
 
 .stack-section {
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 12px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
+  width: 100%;
 }
 
-.stat-category {
+.framework-group {
   margin-bottom: 2rem;
 }
 
-.stat-category h3 {
-  color: #64ffda;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+.stats-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
 .stat-item {
   display: grid;
-  grid-template-columns: 140px 1fr 60px;
+  grid-template-columns: 120px 1fr 100px;
   align-items: center;
   gap: 1rem;
-  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
 }
 
 .stat-label {

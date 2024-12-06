@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", () => {
     .then((response) => response.json())
     .then((projectsData) => {
       projectsContentContainer.innerHTML = ""; // Clear the loader
-      projectsContentContainer.classList.remove("loading");
 
       // Create and add section title
       const sectionTitle = document.createElement("h2");

@@ -119,23 +119,11 @@ jq -s '
   "Web: \($web/30 | floor) lines\nSystems: \($sys/30 | floor) lines\nBackend: \($backend/30 | floor) lines"
 '
 
-# Create JSON file with the same data
+# Create JSON file with language data only
 jq -n --slurpfile data step1.json '
 {
-  web: {
-    total: ($data | map(select(.name == "TypeScript" or .name == "JavaScript")) | map(.size) | add | . / 30),
-    languages: ($data | 
-      map(select(.name == "TypeScript" or .name == "JavaScript")) |
-      group_by(.name) | 
-      map({
-        name: .[0].name,
-        percentage: ((map(.size) | add) / 
-          ($data | map(select(.name == "TypeScript" or .name == "JavaScript")) | map(.size) | add) * 100)
-      })
-    )
-  },
   systems: {
-    total: ($data | map(select(.name == "Rust" or .name == "C" or .name == "Go")) | map(.size) | add | . / 30),
+    total: ($data | map(select(.name == "Rust" or .name == "C" or .name == "Go")) | map(.size) | add),
     languages: ($data |
       map(select(.name == "Rust" or .name == "C" or .name == "Go")) |
       group_by(.name) |
@@ -148,7 +136,7 @@ jq -n --slurpfile data step1.json '
     )
   },
   backend: {
-    total: ($data | map(select(.name == "Ruby" or .name == "Python" or .name == "Elixir")) | map(.size) | add | . / 30),
+    total: ($data | map(select(.name == "Ruby" or .name == "Python" or .name == "Elixir")) | map(.size) | add),
     languages: ($data |
       map(select(.name == "Ruby" or .name == "Python" or .name == "Elixir")) |
       group_by(.name) |
@@ -160,9 +148,9 @@ jq -n --slurpfile data step1.json '
       sort_by(-.percentage)
     )
   }
-}' > data/github-stats.json
+}' > data/language-stats.json
 
 # Cleanup
 rm temp.json temp1.json temp2.json step1.json
 
-echo -e "\nJSON file created successfully at data/github-stats.json"
+echo -e "\nJSON file created successfully at data/language-stats.json"

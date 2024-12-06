@@ -1,19 +1,6 @@
 {
-  "web": {
-    "total": 139002.7,
-    "languages": [
-      {
-        "name": "JavaScript",
-        "percentage": 48.07081684984056
-      },
-      {
-        "name": "TypeScript",
-        "percentage": 51.92918315015943
-      }
-    ]
-  },
   "systems": {
-    "total": 14949.733333333334,
+    "total": 448492,
     "languages": [
       {
         "name": "Rust",
@@ -30,7 +17,7 @@
     ]
   },
   "backend": {
-    "total": 28583.9,
+    "total": 857517,
     "languages": [
       {
         "name": "Ruby",

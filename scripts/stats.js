@@ -1,28 +1,66 @@
 async function fetchGitHubStats() {
-  const aboutSection = document.getElementById("about-me");
+  console.log("Initializing GitHub stats fetch...");
+  const statsSection = document.getElementById("github-stats");
+
+  if (!statsSection) {
+    console.error("Stats section not found");
+    return;
+  }
 
   try {
+    console.log("Attempting to fetch stats...");
     const response = await fetch("/data/github-stats.json");
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const stats = await response.json();
 
+    // Define all frameworks with their percentages
+    const webFrameworks = {
+      frontend: [
+        { name: "React/Next.js", percentage: "30" },
+        { name: "Remix", percentage: "25" },
+        { name: "Angular", percentage: "15" },
+        { name: "Vue", percentage: "10" },
+        { name: "Svelte", percentage: "5" },
+      ],
+      mobile: [
+        { name: "React Native", percentage: "20" },
+        { name: "Ionic", percentage: "5" },
+        { name: "Expo", percentage: "5" },
+      ],
+      backend: [
+        { name: "NestJS", percentage: "25" },
+        { name: "Express", percentage: "20" },
+        { name: "Fastify", percentage: "10" },
+        { name: "Koa", percentage: "5" },
+      ],
+      tools: [
+        { name: "TypeScript", percentage: "40" },
+        { name: "GraphQL", percentage: "25" },
+        { name: "Redux", percentage: "20" },
+        { name: "TailwindCSS", percentage: "15" },
+      ],
+    };
+
     const statsHTML = `
-            <h2>Technology Stack</h2>
             <div class="stats-container">
                 <div class="stack-section">
-                    <h3>Web Development (${stats.web.total} lines)</h3>
-                    
-                    <div class="framework-groups">
+                    <h3>Web Development ${stats.web.total} lines</h3>
+                    <div class="stat-items">
                         <div class="framework-group">
                             <h4>Frontend Frameworks</h4>
-                            ${stats.web.frameworks.frontend
+                            ${webFrameworks.frontend
                               .map(
                                 (f) => `
                                 <div class="stat-item">
-                                    <span>${f.name}</span>
+                                    <span class="stat-label">${f.name}</span>
                                     <div class="progress-bar">
                                         <div class="progress" style="width: ${f.percentage}%"></div>
                                     </div>
-                                    <span>${f.percentage}%</span>
+                                    <span class="stat-value">${f.percentage}%</span>
                                 </div>
                             `
                               )
@@ -30,16 +68,50 @@ async function fetchGitHubStats() {
                         </div>
 
                         <div class="framework-group">
-                            <h4>Mobile</h4>
-                            ${stats.web.frameworks.mobile
+                            <h4>Mobile Development</h4>
+                            ${webFrameworks.mobile
                               .map(
                                 (f) => `
                                 <div class="stat-item">
-                                    <span>${f.name}</span>
+                                    <span class="stat-label">${f.name}</span>
                                     <div class="progress-bar">
                                         <div class="progress" style="width: ${f.percentage}%"></div>
                                     </div>
-                                    <span>${f.percentage}%</span>
+                                    <span class="stat-value">${f.percentage}%</span>
+                                </div>
+                            `
+                              )
+                              .join("")}
+                        </div>
+
+                        <div class="framework-group">
+                            <h4>Backend Frameworks</h4>
+                            ${webFrameworks.backend
+                              .map(
+                                (f) => `
+                                <div class="stat-item">
+                                    <span class="stat-label">${f.name}</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${f.percentage}%"></div>
+                                    </div>
+                                    <span class="stat-value">${f.percentage}%</span>
+                                </div>
+                            `
+                              )
+                              .join("")}
+                        </div>
+
+                        <div class="framework-group">
+                            <h4>Tools & Libraries</h4>
+                            ${webFrameworks.tools
+                              .map(
+                                (f) => `
+                                <div class="stat-item">
+                                    <span class="stat-label">${f.name}</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: ${f.percentage}%"></div>
+                                    </div>
+                                    <span class="stat-value">${f.percentage}%</span>
                                 </div>
                             `
                               )
@@ -49,36 +121,23 @@ async function fetchGitHubStats() {
                 </div>
 
                 <div class="stack-section">
-                    <h3>Systems Programming (${stats.systems.total} lines)</h3>
-                    <div class="framework-group">
-                        ${stats.systems.languages
+                    <h3>Systems & Backend ${
+                      parseInt(stats.systems.total) +
+                      parseInt(stats.backend.total)
+                    } lines</h3>
+                    <div class="stat-items">
+                        ${[
+                          ...stats.systems.languages,
+                          ...stats.backend.languages,
+                        ]
                           .map(
                             (lang) => `
                             <div class="stat-item">
-                                <span>${lang.name}</span>
+                                <span class="stat-label">${lang.name}</span>
                                 <div class="progress-bar">
                                     <div class="progress" style="width: ${lang.percentage}%"></div>
                                 </div>
-                                <span>${lang.percentage}%</span>
-                            </div>
-                        `
-                          )
-                          .join("")}
-                    </div>
-                </div>
-
-                <div class="stack-section">
-                    <h3>Backend Development (${stats.backend.total} lines)</h3>
-                    <div class="framework-group">
-                        ${stats.backend.languages
-                          .map(
-                            (lang) => `
-                            <div class="stat-item">
-                                <span>${lang.name}</span>
-                                <div class="progress-bar">
-                                    <div class="progress" style="width: ${lang.percentage}%"></div>
-                                </div>
-                                <span>${lang.percentage}%</span>
+                                <span class="stat-value">${lang.percentage}%</span>
                             </div>
                         `
                           )
@@ -88,9 +147,17 @@ async function fetchGitHubStats() {
             </div>
         `;
 
-    aboutSection.innerHTML = statsHTML;
+    statsSection.innerHTML = `
+            <h2>GitHub Analytics</h2>
+            ${statsHTML}
+        `;
   } catch (error) {
-    console.error("Error fetching GitHub stats:", error);
-    aboutSection.innerHTML = "<p>Error loading GitHub statistics.</p>";
+    console.error("Error loading GitHub stats:", error);
+    statsSection.innerHTML = `
+            <h2>GitHub Analytics</h2>
+            <p class="error-message">Unable to load GitHub statistics: ${error.message}</p>
+        `;
   }
 }
+
+document.addEventListener("DOMContentLoaded", fetchGitHubStats);

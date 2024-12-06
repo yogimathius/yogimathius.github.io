@@ -671,14 +671,14 @@ p {
 }
 
 #github-stats {
-  margin: 3rem auto;
+  margin: 2rem auto;
 }
 
 .stats-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .stack-section {

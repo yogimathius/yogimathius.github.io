@@ -10,18 +10,17 @@ first_query='
           endCursor
         }
         nodes {
-          name
-          object(expression: "HEAD:package.json") {
-            ... on Blob {
-              text
-            }
-          }
           languages(first: 100, orderBy: {field: SIZE, direction: DESC}) {
             edges {
               size
               node {
                 name
               }
+            }
+          }
+          object(expression: "HEAD:package.json") {
+            ... on Blob {
+              text
             }
           }
         }
@@ -48,6 +47,11 @@ second_query='
               }
             }
           }
+          object(expression: "HEAD:package.json") {
+            ... on Blob {
+              text
+            }
+          }
         }
       }
     }
@@ -58,40 +62,25 @@ gh api graphql -f query="$second_query" > temp2.json
 echo "3. Combining results..."
 jq -s '.[0].data.viewer.repositories.nodes + .[1].data.viewer.repositories.nodes' temp1.json temp2.json > temp.json
 
-# echo "4. Raw language data from combined repositories:"
+# Process language data
 jq -r '.[] | .languages.edges[] | {
   name: .node.name, 
-  size: .size,
-  repo_name: input_filename
+  size: .size
 }' temp.json > step1.json
-# echo "-------------------"
 
-echo "4. Calculate total lines across all languages:"
-total_bytes=$(cat step1.json | jq -s 'map(.size) | add / 30 | floor')
-echo "Total lines: $total_bytes"
-echo "-------------------"
+mkdir -p data
 
-echo "Web Development Stack ($(cat step1.json | jq -s 'map(select(.name == "TypeScript" or .name == "JavaScript")) | map(.size) | add | . / 30 | floor' ) lines):"
+echo "Web Development (Primary Stack):"
 cat step1.json | \
 jq -s '
   map(select(.name == "TypeScript" or .name == "JavaScript")) |
   . as $all_web |
   ($all_web | map(.size) | add) as $web_total |
-  {
-    "Frontend Frameworks": [
-      {name: "React/Next.js", size: ($all_web | map(.size) | add * 0.3)},
-      {name: "Remix", size: ($all_web | map(.size) | add * 0.25)}
-    ],
-    "Mobile": [
-      {name: "React Native", size: ($all_web | map(.size) | add * 0.2)}
-    ],
-    "Backend Frameworks": [
-      {name: "NestJS", size: ($all_web | map(.size) | add * 0.25)}
-    ]
-  } | 
-  to_entries | .[] | 
-  "\n\(.key):",
-  (.value | .[] | "• \(.name): \(.size / $web_total * 100 | . * 1 | tostring | .[0:5])%")
+  group_by(.name) | map({
+    name: .[0].name,
+    percentage: ((map(.size | numbers) | add) / ($web_total|tonumber) * 100)
+  }) | sort_by(-.percentage) | .[] |
+  "• \(.name): \(.percentage | . * 1 | tostring | .[0:5])%"
 '
 
 echo -e "\nSystems Programming ($(cat step1.json | jq -s 'map(select(.name == "Rust" or .name == "C" or .name == "Go")) | map(.size) | add | . / 30 | floor' ) lines):"
@@ -130,5 +119,50 @@ jq -s '
   "Web: \($web/30 | floor) lines\nSystems: \($sys/30 | floor) lines\nBackend: \($backend/30 | floor) lines"
 '
 
+# Create JSON file with the same data
+jq -n --slurpfile data step1.json '
+{
+  web: {
+    total: ($data | map(select(.name == "TypeScript" or .name == "JavaScript")) | map(.size) | add | . / 30),
+    languages: ($data | 
+      map(select(.name == "TypeScript" or .name == "JavaScript")) |
+      group_by(.name) | 
+      map({
+        name: .[0].name,
+        percentage: ((map(.size) | add) / 
+          ($data | map(select(.name == "TypeScript" or .name == "JavaScript")) | map(.size) | add) * 100)
+      })
+    )
+  },
+  systems: {
+    total: ($data | map(select(.name == "Rust" or .name == "C" or .name == "Go")) | map(.size) | add | . / 30),
+    languages: ($data |
+      map(select(.name == "Rust" or .name == "C" or .name == "Go")) |
+      group_by(.name) |
+      map({
+        name: .[0].name,
+        percentage: ((map(.size) | add) /
+          ($data | map(select(.name == "Rust" or .name == "C" or .name == "Go")) | map(.size) | add) * 100)
+      }) |
+      sort_by(-.percentage)
+    )
+  },
+  backend: {
+    total: ($data | map(select(.name == "Ruby" or .name == "Python" or .name == "Elixir")) | map(.size) | add | . / 30),
+    languages: ($data |
+      map(select(.name == "Ruby" or .name == "Python" or .name == "Elixir")) |
+      group_by(.name) |
+      map({
+        name: .[0].name,
+        percentage: ((map(.size) | add) /
+          ($data | map(select(.name == "Ruby" or .name == "Python" or .name == "Elixir")) | map(.size) | add) * 100)
+      }) |
+      sort_by(-.percentage)
+    )
+  }
+}' > data/github-stats.json
+
 # Cleanup
 rm temp.json temp1.json temp2.json step1.json
+
+echo -e "\nJSON file created successfully at data/github-stats.json"

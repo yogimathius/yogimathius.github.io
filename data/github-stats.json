@@ -1,62 +1,48 @@
 {
   "web": {
-    "total": "138866",
-    "frameworks": {
-      "frontend": [
-        {
-          "name": "React/Next.js",
-          "percentage": "30"
-        },
-        {
-          "name": "Remix",
-          "percentage": "25"
-        }
-      ],
-      "mobile": [
-        {
-          "name": "React Native",
-          "percentage": "20"
-        }
-      ],
-      "backend": [
-        {
-          "name": "NestJS",
-          "percentage": "25"
-        }
-      ]
-    }
+    "total": 139002.7,
+    "languages": [
+      {
+        "name": "JavaScript",
+        "percentage": 48.07081684984056
+      },
+      {
+        "name": "TypeScript",
+        "percentage": 51.92918315015943
+      }
+    ]
   },
   "systems": {
-    "total": "14949",
+    "total": 14949.733333333334,
     "languages": [
       {
         "name": "Rust",
-        "percentage": "60.46"
+        "percentage": 60.465292580469665
       },
       {
         "name": "C",
-        "percentage": "36.92"
+        "percentage": 36.926857112278476
       },
       {
         "name": "Go",
-        "percentage": "2.607"
+        "percentage": 2.6078503072518573
       }
     ]
   },
   "backend": {
-    "total": "28583",
+    "total": 28583.9,
     "languages": [
       {
         "name": "Ruby",
-        "percentage": "71.36"
+        "percentage": 71.36523240938664
       },
       {
         "name": "Python",
-        "percentage": "19.93"
+        "percentage": 19.936630993904494
       },
       {
         "name": "Elixir",
-        "percentage": "8.698"
+        "percentage": 8.69813659670887
       }
     ]
   }

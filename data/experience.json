@@ -2,7 +2,7 @@
   "employment": [
     {
       "company": "Shopify",
-      "position": "Software Developer",
+      "position": "Senior Software Engineer",
       "duration": "June 2022​ to Present",
       "responsibilities": [
         "Architect and implement scalable solutions for Shopify merchants, focusing on performance optimization and user experience enhancement",
@@ -15,7 +15,7 @@
       "position": "Technical Instructor, Mentor & Project Evaluator",
       "duration": "Nov. 2020​ to March 2024",
       "responsibilities": [
-        "Mentored 200+ students varying in experience through complex technical concepts, resulting in a 95% successful assistance satisfaction rate",
+        "Mentored over 150 students varying in experience through complex technical concepts, fostering a high rate of positive outcomes",
         "Developed and implemented personalized learning strategies, leading to significant improvements in student technical proficiency",
         "Conducted comprehensive code reviews and technical assessments, maintaining high educational standards while providing constructive feedback"
       ]
@@ -26,18 +26,18 @@
       "duration": "July 2023​ to March 2024",
       "responsibilities": [
         "Led weekly technical mentorship sessions for software engineering students, focusing on full-stack development principles",
-        "Designed individualized learning roadmaps resulting in 40% improvement in student project completion rates",
+        "Designed individualized learning roadmaps, contributing to improved student project completion rates",
         "Facilitated in-depth technical discussions and code reviews, emphasizing industry best practices and modern development methodologies"
       ]
     },
     {
       "company": "TWG, a Deloitte Business",
       "position": "Software Engineer",
-      "duration": "May 2021​ to June 2022​",
+      "duration": "May 2_021​ to June 2022​",
       "responsibilities": [
-        "Engineered high-performance React TypeScript components integrated with GraphQL, improving application response times by 30%",
+        "Engineered high-performance React TypeScript components integrated with GraphQL, improving application performance",
         "Spearheaded the implementation of GraphQL APIs within a Ruby on Rails ecosystem, enhancing data retrieval efficiency",
-        "Led legacy code modernization initiatives, resulting in 40% improved maintainability scores and reduced technical debt"
+        "Led legacy code modernization initiatives, improving code maintainability and reducing technical debt"
       ]
     }
   ]

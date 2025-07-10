@@ -670,9 +670,9 @@ function displayGitHubStats(stats) {
   // Initialize all charts
   setTimeout(() => {
     createDonutChart(stats.languages);
-    createRadarChart(stats.techStack, stats.languages);
-    createBubbleChart(stats.reposByLanguage);
-    createActivityHeatmap(stats.contributionData);
+    createRadarChart(stats.languageBytes);
+    // createBubbleChart(stats.reposByLanguage);
+    // createActivityHeatmap(stats.contributionData);
   }, 100);
 
   // Add refresh button functionality
@@ -749,42 +749,33 @@ function createDonutChart(languages) {
 }
 
 // Create balanced radar chart
-function createRadarChart(techStack, languages) {
+function createRadarChart(languageBytes) {
   const canvas = document.getElementById("techRadarChart");
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
 
   // Ensure we have data
-  techStack = techStack || {};
-  languages = languages || {};
+  if (!languageBytes || Object.keys(languageBytes).length === 0) {
+    return;
+  }
 
-  // Combine and normalize data for balanced view
-  const skills = {
-    Rust: (languages["Rust"] || 0) + (techStack["Rust"] || 0) * 2,
-    JavaScript: Math.min((languages["JavaScript"] || 0) / 2, 10),
-    TypeScript: (languages["TypeScript"] || 0) + (techStack["TypeScript"] || 0),
-    Python: (languages["Python"] || 0) + (techStack["Python"] || 0),
-    React: techStack["React"] || 0,
-    "Node.js": techStack["Node.js"] || 0,
-    GraphQL: techStack["GraphQL"] || 0,
-    Docker: techStack["Docker"] || 0,
-  };
+  // Sort by bytes and take the top 8
+  const sortedLangs = Object.entries(languageBytes)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8);
 
-  // Normalize values to 0-10 scale
-  const maxValue = Math.max(...Object.values(skills));
-  Object.keys(skills).forEach((key) => {
-    skills[key] = (skills[key] / maxValue) * 10;
-  });
+  const labels = sortedLangs.map(([lang]) => lang);
+  const data = sortedLangs.map(([, bytes]) => bytes);
 
   new Chart(ctx, {
     type: "radar",
     data: {
-      labels: Object.keys(skills),
+      labels: labels,
       datasets: [
         {
-          label: "Skill Level",
-          data: Object.values(skills),
+          label: "Language Proficiency (by bytes)",
+          data: data,
           backgroundColor: "rgba(100, 255, 218, 0.2)",
           borderColor: "#64ffda",
           borderWidth: 2,
@@ -801,7 +792,6 @@ function createRadarChart(techStack, languages) {
       scales: {
         r: {
           beginAtZero: true,
-          max: 10,
           ticks: {
             stepSize: 2,
             color: "#8892b0",

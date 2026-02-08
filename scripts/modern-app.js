@@ -399,13 +399,7 @@ async function updateProfileStats() {
     if (!response.ok) return;
 
     const profile = await response.json();
-
-    const repoMetric = document.getElementById("metric-repos");
     const followerMetric = document.getElementById("metric-followers");
-
-    if (repoMetric && typeof profile.public_repos === "number") {
-      repoMetric.textContent = `${profile.public_repos}+`;
-    }
 
     if (followerMetric && typeof profile.followers === "number") {
       followerMetric.textContent = `${profile.followers}`;

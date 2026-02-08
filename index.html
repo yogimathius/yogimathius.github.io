@@ -1,338 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mathius Johnson - Full Stack Developer</title>
-    <link rel="stylesheet" href="styles-modern.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mathius Johnson | Software Engineer</title>
+    <meta
+      name="description"
+      content="Software engineer building systems in Rust, Go, TypeScript, and AI. MCP servers, terminal UIs, and high-performance APIs."
+    />
+    <meta property="og:title" content="Mathius Johnson | Software Engineer" />
+    <meta
+      property="og:description"
+      content="Software engineer building systems in Rust, Go, TypeScript, and AI."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yogimathius.github.io" />
+    <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@300..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script
-      src="https://kit.fontawesome.com/e443c157b0.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="styles-modern.css" />
     <script defer src="scripts/modern-app.js"></script>
   </head>
   <body>
-    <!-- Modern Navigation -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="#hero" class="nav-logo">
-          <span class="logo-text">MJ</span>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="page-ambient" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+      <div class="shell nav-shell">
+        <a class="brand" href="#home" aria-label="Go to top">
+          <img
+            src="images/github-avatar.jpg"
+            alt=""
+            width="36"
+            height="36"
+            loading="eager"
+            decoding="async"
+          />
+          <span>Yogimathius<span>.</span></span>
         </a>
-        <div class="nav-menu" id="nav-menu">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#hero" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="#about" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="#skills" class="nav-link">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a href="#projects" class="nav-link">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a href="#experience" class="nav-link">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link">Contact</a>
-            </li>
-          </ul>
-          <div class="nav-cta">
-            <a href="/resume.pdf" class="btn btn-outline" download>Resume</a>
-          </div>
-        </div>
-        <div class="nav-toggle" id="nav-toggle">
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
           <span></span>
           <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
+        </button>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <div class="hero-background">
-        <div class="hero-particles" id="particles"></div>
-      </div>
-      <div class="hero-content">
-        <span class="hero-greeting">Hi, my name is</span>
-        <h1 class="hero-name">Mathius Johnson.</h1>
-        <h2 class="hero-title">
-          I build things for the <span class="typed-text" id="typed"></span>
-        </h2>
-        <p class="hero-description">
-          I'm a full-stack developer specializing in building exceptional
-          digital experiences. Currently focused on creating AI-integrated
-          systems and high-performance applications with Rust and modern web
-          technologies.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Get In Touch</a>
-        </div>
-        <div class="hero-scroll">
-          <div class="scroll-indicator">
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" data-number="01">About Me</h2>
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              Hello! I'm Mathius, a passionate full-stack developer who loves
-              building software that lives at the intersection of technology and
-              human experience.
-            </p>
-            <p>
-              My journey in tech started with a curiosity about how things work
-              and has evolved into a career focused on creating efficient,
-              scalable solutions. I specialize in systems programming with Rust,
-              building AI integrations, and crafting modern web applications.
-            </p>
-            <p>Here are a few technologies I've been working with recently:</p>
-            <ul class="tech-list">
-              <li>Rust</li>
-              <li>TypeScript</li>
-              <li>React/Next.js</li>
-              <li>Node.js</li>
-              <li>GraphQL</li>
-              <li>WebAssembly</li>
-            </ul>
-          </div>
-          <div class="about-image">
-            <div class="image-wrapper">
-              <img
-                src="images/profile.jpg"
-                alt="Mathius Johnson"
-                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzExMjI0MCIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjIwMCIgcj0iMTUwIiBmaWxsPSIjMjMzNTU0Ii8+CiAgPHRleHQgeD0iMjAwIiB5PSIyMDAiIGZvbnQtZmFtaWx5PSJJbnRlciwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMjBweCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2NGZmZGEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5NSjwvdGV4dD4KPC9zdmc+'"
-              />
-              <div class="image-overlay"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" data-number="02">Skills & Expertise</h2>
-        </div>
-        <div class="skills-container">
-          <div class="skill-category">
-            <div class="skill-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3>Languages</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Rust</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">C/C++</span>
-              <span class="skill-tag">SQL</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <div class="skill-icon">
-              <i class="fas fa-layer-group"></i>
-            </div>
-            <h3>Frontend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Next.js</span>
-              <span class="skill-tag">Vue.js</span>
-              <span class="skill-tag">WASM</span>
-              <span class="skill-tag">Tailwind</span>
-              <span class="skill-tag">Three.js</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <div class="skill-icon">
-              <i class="fas fa-server"></i>
-            </div>
-            <h3>Backend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Rust (Axum)</span>
-              <span class="skill-tag">Ruby on Rails</span>
-              <span class="skill-tag">Django</span>
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Express</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">Redis</span>
-              <span class="skill-tag">Docker</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <div class="skill-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>Tools & Other</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">CI/CD</span>
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">Agile</span>
-              <span class="skill-tag">TDD</span>
-            </div>
-          </div>
-        </div>
-        <!-- GitHub Stats Integration -->
-        <div class="github-stats-wrapper">
-          <h3>GitHub Analytics</h3>
-          <div id="github-stats-container"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" data-number="03">Featured Projects</h2>
-        </div>
-        <div class="projects-grid" id="projects-container">
-          <!-- Projects will be dynamically loaded -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section experience-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title" data-number="04">Where I've Worked</h2>
-        </div>
-        <div class="experience-wrapper">
-          <div class="experience-tabs">
-            <div class="tab-list" role="tablist" id="experience-tabs">
-              <!-- Tabs will be dynamically loaded -->
-            </div>
-          </div>
-          <div class="experience-content" id="experience-content">
-            <!-- Content will be dynamically loaded -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <div class="section-header centered">
-          <h2 class="section-title" data-number="05">Get In Touch</h2>
-        </div>
-        <div class="contact-content">
-          <p class="contact-description">
-            I'm currently open to new opportunities and interesting projects.
-            Whether you have a question or just want to say hi, I'll try my best
-            to get back to you!
-          </p>
-          <a
-            href="mailto:info@yogimathius.dev"
-            class="btn btn-primary btn-large"
-          >
-            Say Hello
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="#work" class="nav-link">Work</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="https://github.com/yogimathius" target="_blank" rel="noopener noreferrer" class="nav-cta">
+            GitHub
           </a>
-          <div class="social-links">
-            <a
-              href="https://github.com/yogimathius"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-              aria-label="GitHub Profile"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-            <a
-              href="https://linkedin.com/in/mathius-johnson"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-              aria-label="LinkedIn Profile"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="https://twitter.com/yogimathius"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-              aria-label="Twitter Profile"
-            >
-              <i class="fab fa-twitter"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="home">
+        <div class="shell hero-shell">
+          <article class="hero-primary reveal" data-reveal="up">
+            <p class="eyebrow">Software Engineer - AI Toolsmith</p>
+            <h1>
+              I build systems
+              <span>that scale</span>
+              and agents that ship.
+            </h1>
+            <p class="hero-copy">
+              Software engineer at Shopify by day, building AI agent infrastructure by night. Rust, Go,
+              TypeScript, and Python across MCP servers, high-throughput APIs, and developer tooling.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">View Projects</a>
+              <a class="button button-ghost" href="#contact">Get in Touch</a>
+            </div>
+          </article>
+
+          <aside class="hero-metrics reveal" data-reveal="up" data-delay="80">
+            <h2>Current Snapshot</h2>
+            <div class="metric-grid">
+              <div class="metric-card">
+                <p class="metric-label">Repositories</p>
+                <p class="metric-value" id="metric-repos">218+</p>
+              </div>
+              <div class="metric-card">
+                <p class="metric-label">Followers</p>
+                <p class="metric-value" id="metric-followers">--</p>
+              </div>
+              <div class="metric-card">
+                <p class="metric-label">Languages</p>
+                <p class="metric-value">8</p>
+              </div>
+              <div class="metric-card">
+                <p class="metric-label">Primary Focus</p>
+                <p class="metric-value metric-focus">MCP + Agent Infra</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="featured" id="featured">
+        <div class="shell">
+          <div class="section-head reveal" data-reveal="up">
+            <p class="eyebrow">Highlights</p>
+            <h2>Featured Work</h2>
+          </div>
+          <div class="featured-grid" id="featured-grid"></div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="shell">
+          <div class="section-head reveal" data-reveal="up">
+            <p class="eyebrow">Portfolio</p>
+            <h2>Project Catalog</h2>
+            <p>
+              Selected systems, AI, backend, and full-stack builds from the main portfolio. Filter by the domain
+              you care about.
+            </p>
+          </div>
+
+          <div class="filters reveal" data-reveal="up" id="filter-group" role="tablist" aria-label="Project categories"></div>
+
+          <div class="projects-grid" id="projects-grid"></div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="shell about-shell">
+          <article class="about-main reveal" data-reveal="up">
+            <p class="eyebrow">About</p>
+            <h2>Engineering for the agentic era</h2>
+            <p>
+              My current obsession is the tooling layer that makes AI agents actually useful: MCP servers,
+              memory systems, context engineering, and runtime safety for production workloads.
+            </p>
+            <p>
+              I pick the right tool for the job and optimize for durable systems, not temporary demos.
+              The north star: software that improves human capability.
+            </p>
+            <div class="stack-groups">
+              <div>
+                <h3>Systems</h3>
+                <p>Rust - Go - C - WebAssembly</p>
+              </div>
+              <div>
+                <h3>Web + AI</h3>
+                <p>TypeScript - React - Python - MCP</p>
+              </div>
+              <div>
+                <h3>Infra</h3>
+                <p>Docker - Kubernetes - AWS - CI/CD</p>
+              </div>
+            </div>
+          </article>
+
+          <aside class="about-side reveal" data-reveal="up" data-delay="120">
+            <img
+              src="images/github-avatar.jpg"
+              alt="Mathius Johnson"
+              width="120"
+              height="120"
+              loading="lazy"
+              decoding="async"
+            />
+            <h3>Mathius Johnson</h3>
+            <p>Software Engineer @ Shopify</p>
+            <ul>
+              <li>West Coast, Canada</li>
+              <li>Building in public</li>
+              <li>Open to ambitious collaborations</li>
+            </ul>
+            <div class="about-links">
+              <a href="https://github.com/yogimathius" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/mathiusjohnson" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="experience" id="experience">
+        <div class="shell">
+          <div class="section-head reveal" data-reveal="up">
+            <p class="eyebrow">Timeline</p>
+            <h2>Professional Experience</h2>
+          </div>
+          <div class="experience-list" id="experience-list"></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="shell contact-shell reveal" data-reveal="up">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's build something meaningful.</h2>
+          <p>
+            I'm always up for conversations about AI tooling, systems engineering, and product ideas that need
+            serious execution.
+          </p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:info@yogimathius.dev">Email Me</a>
+            <a class="button button-ghost" href="https://github.com/yogimathius" target="_blank" rel="noopener noreferrer">
+              Follow on GitHub
             </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>Designed & Built by Mathius Johnson</p>
-        <p class="footer-year">© 2024</p>
+    <footer class="site-footer">
+      <div class="shell footer-shell">
+        <p>Designed and built by Mathius Johnson</p>
+        <p>(c) <span id="footer-year"></span></p>
       </div>
     </footer>
-
-    <!-- Side Elements -->
-    <div class="side-element side-left">
-      <ul class="social-sidebar">
-        <li>
-          <a
-            href="https://github.com/yogimathius"
-            target="_blank"
-            aria-label="GitHub Profile"
-            ><i class="fab fa-github"></i
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://linkedin.com/in/mathius-johnson"
-            target="_blank"
-            aria-label="LinkedIn Profile"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </li>
-        <li>
-          <a
-            href="https://twitter.com/yogimathius"
-            target="_blank"
-            aria-label="Twitter Profile"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </li>
-        <li>
-          <a href="mailto:info@yogimathius.dev" aria-label="Email Me"
-            ><i class="fas fa-envelope"></i
-          ></a>
-        </li>
-      </ul>
-    </div>
-    <div class="side-element side-right">
-      <div class="email-sidebar">
-        <a href="mailto:info@yogimathius.dev">info@yogimathius.dev</a>
-      </div>
-    </div>
   </body>
 </html>

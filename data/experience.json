@@ -3,41 +3,41 @@
     {
       "company": "Shopify",
       "position": "Senior Software Engineer",
-      "duration": "June 2022​ to Present",
+      "duration": "Jun 2022 - Present",
       "responsibilities": [
-        "Architect and implement scalable solutions for Shopify merchants, focusing on performance optimization and user experience enhancement",
-        "Drive cross-functional collaboration to translate complex merchant requirements into elegant technical solutions",
-        "Establish and maintain robust testing protocols, ensuring high-quality code deployment and minimal production incidents"
+        "Architect and implement scalable merchant-facing systems with strong performance and reliability constraints.",
+        "Collaborate across product and engineering to translate complex requirements into maintainable technical solutions.",
+        "Drive quality through testing, observability, and iterative rollout strategies to reduce production risk."
       ]
     },
     {
       "company": "Lighthouse Labs",
-      "position": "Technical Instructor, Mentor & Project Evaluator",
-      "duration": "Nov. 2020​ to March 2024",
+      "position": "Technical Instructor, Mentor, and Project Evaluator",
+      "duration": "Nov 2020 - Mar 2024",
       "responsibilities": [
-        "Mentored over 150 students varying in experience through complex technical concepts, fostering a high rate of positive outcomes",
-        "Developed and implemented personalized learning strategies, leading to significant improvements in student technical proficiency",
-        "Conducted comprehensive code reviews and technical assessments, maintaining high educational standards while providing constructive feedback"
+        "Mentored 150+ students across software engineering topics with an emphasis on practical shipping skills.",
+        "Built structured learning plans to improve technical confidence and project completion consistency.",
+        "Performed detailed code reviews and assessments focused on industry-grade quality and communication."
       ]
     },
     {
       "company": "Springboard Bootcamp",
       "position": "Technical Mentor",
-      "duration": "July 2023​ to March 2024",
+      "duration": "Jul 2023 - Mar 2024",
       "responsibilities": [
-        "Led weekly technical mentorship sessions for software engineering students, focusing on full-stack development principles",
-        "Designed individualized learning roadmaps, contributing to improved student project completion rates",
-        "Facilitated in-depth technical discussions and code reviews, emphasizing industry best practices and modern development methodologies"
+        "Led weekly mentorship sessions on full-stack engineering and production-minded development.",
+        "Designed individualized growth plans based on project outcomes and technical gaps.",
+        "Facilitated deep-dive discussions and review cycles around architecture, testing, and delivery."
       ]
     },
     {
       "company": "TWG, a Deloitte Business",
       "position": "Software Engineer",
-      "duration": "May 2_021​ to June 2022​",
+      "duration": "May 2021 - Jun 2022",
       "responsibilities": [
-        "Engineered high-performance React TypeScript components integrated with GraphQL, improving application performance",
-        "Spearheaded the implementation of GraphQL APIs within a Ruby on Rails ecosystem, enhancing data retrieval efficiency",
-        "Led legacy code modernization initiatives, improving code maintainability and reducing technical debt"
+        "Engineered high-performance React and TypeScript interfaces backed by GraphQL services.",
+        "Implemented GraphQL APIs in a Ruby on Rails ecosystem to improve data retrieval and developer ergonomics.",
+        "Contributed to legacy modernization programs that improved maintainability and reduced operational drag."
       ]
     }
   ]
